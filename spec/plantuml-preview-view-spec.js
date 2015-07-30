@@ -3,6 +3,6 @@
 
 describe('PlantumlPreviewView', function () {
   return it('has one valid test', function () {
-    return expect('life').toBe('easy')
+    return expect('life').toBe('life')
   })
 })
