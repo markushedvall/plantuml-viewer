@@ -3,8 +3,7 @@
   "main": "./lib/plantuml-preview",
   "version": "0.0.0",
   "description": "A short description of your package",
-  "keywords": [
-  ],
+  "keywords": [],
   "activationCommands": {
     "atom-workspace": "plantuml-preview:toggle"
   },
@@ -13,6 +12,9 @@
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
+    "temp": "^0.8.3",
+    "wrench": "^1.5.8"
   }
 }
