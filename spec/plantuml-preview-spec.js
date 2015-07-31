@@ -53,7 +53,6 @@ describe('PlantumlPreview', function () {
   }
 
   describe('when the plantuml-preview:toggle event is triggered', function () {
-    // Test pane is actually to the right ??
     it('should create a second pane', function () {
       waitsForOpening('file.puml')
 
