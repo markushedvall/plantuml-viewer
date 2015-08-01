@@ -14,7 +14,12 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "standard": "^4.5.4",
     "temp": "^0.8.3",
     "wrench": "^1.5.8"
+  },
+  "scripts": {
+    "test": "standard && apm test",
+    "lint": "standard"
   }
 }
