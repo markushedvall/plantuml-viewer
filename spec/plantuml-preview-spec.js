@@ -1,6 +1,7 @@
 /* global atom jasmine beforeEach waitsForPromise waitsFor runs describe it expect */
 'use strict'
 
+var PlantumlPreviewEditor = require('../lib/plantuml-preview-editor')
 var temp = require('temp')
 var path = require('path')
 var wrench = require('wrench')
@@ -103,6 +104,17 @@ describe('PlantumlPreview', function () {
 
       runs(function () {
         expect(firstPane.isActive()).toBe(true)
+      })
+    })
+
+    it('should create a pane with a PlantumlPreviewEditor', function () {
+      waitsForOpening('file.puml')
+      runsToggle()
+      waitsForActivation()
+      waitsForPreviewToBeCreated()
+      runs(function () {
+        var preview = atom.workspace.getPanes()[1].getActiveItem()
+        expect(preview).toBeInstanceOf(PlantumlPreviewEditor)
       })
     })
 
