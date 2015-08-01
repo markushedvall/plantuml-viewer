@@ -118,5 +118,23 @@ describe('PlantumlPreview', function () {
       })
     })
 
+    it('should destroy active PlantumlPreviewEditor', function () {
+      waitsForOpening('file.puml')
+      runsToggle()
+      waitsForActivation()
+      waitsForPreviewToBeCreated()
+      runs(function () {
+        var previewPane = atom.workspace.getPanes()[1]
+        expect(previewPane.isActive()).toBe(false)
+
+        previewPane.activate()
+        expect(previewPane.isActive()).toBe(true)
+        expect(previewPane.getItems()).toHaveLength(1)
+
+        atom.commands.dispatch(workspaceElement, TOGGLE)
+        expect(previewPane.getItems()).toHaveLength(0)
+      })
+    })
+
   })
 })
