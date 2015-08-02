@@ -1,24 +1,10 @@
-/* global atom beforeEach waitsForPromise runs describe it expect */
+/* global atom waitsForPromise runs describe it expect */
 'use strict'
 
 var PlantumlPreviewEditor = require('../lib/plantuml-preview-editor')
 var PlantumlPreviewView = require('../lib/plantuml-preview-view')
-var temp = require('temp')
-var path = require('path')
-var wrench = require('wrench')
-
-var FIXTURES_PATH = path.join(__dirname, 'fixtures')
-
-temp.track()
 
 describe('PlantumlPreviewEditor', function () {
-
-  beforeEach(function () {
-    var tempPath = temp.mkdirSync('plantuml-preview')
-    wrench.copyDirSyncRecursive(FIXTURES_PATH, tempPath, { forceDelete: true })
-    atom.project.setPaths([tempPath])
-  })
-
   function waitsForOpeningEditor () {
     waitsForPromise(function () {
       return atom.workspace.open('file.puml')

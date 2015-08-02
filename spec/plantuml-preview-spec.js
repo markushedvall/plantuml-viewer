@@ -2,24 +2,14 @@
 'use strict'
 
 var PlantumlPreviewEditor = require('../lib/plantuml-preview-editor')
-var temp = require('temp')
-var path = require('path')
-var wrench = require('wrench')
 
-var FIXTURES_PATH = path.join(__dirname, 'fixtures')
 var TOGGLE = 'plantuml-preview:toggle'
-
-temp.track()
 
 describe('PlantumlPreview', function () {
   var activationPromise
   var workspaceElement
 
   beforeEach(function () {
-    var tempPath = temp.mkdirSync('plantuml-preview')
-    wrench.copyDirSyncRecursive(FIXTURES_PATH, tempPath, { forceDelete: true })
-    atom.project.setPaths([tempPath])
-
     workspaceElement = atom.views.getView(atom.workspace)
     activationPromise = atom.packages.activatePackage('plantuml-preview')
     jasmine.attachToDOM(workspaceElement)
@@ -43,7 +33,7 @@ describe('PlantumlPreview', function () {
 
   function waitsForOpening (file) {
     waitsForPromise(function () {
-      return atom.workspace.open('file.puml')
+      return atom.workspace.open(file)
     })
   }
 
