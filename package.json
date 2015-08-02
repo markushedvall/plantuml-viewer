@@ -13,12 +13,12 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
-    "atom-space-pen-views": "^2.0.5"
+    "atom-space-pen-views": "^2.0.5",
+    "node-plantuml": "^0.1.5",
+    "temp": "^0.8.3"
   },
   "devDependencies": {
-    "standard": "^4.5.4",
-    "temp": "^0.8.3",
-    "wrench": "^1.5.8"
+    "standard": "^4.5.4"
   },
   "scripts": {
     "test": "standard && apm test",
