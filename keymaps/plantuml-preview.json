@@ -1,5 +1,5 @@
 {
   "atom-workspace": {
-    "ctrl-alt-o": "plantuml-preview:toggle"
+    "ctrl-alt-p": "plantuml-preview:toggle"
   }
 }
