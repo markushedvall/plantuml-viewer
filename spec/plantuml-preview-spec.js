@@ -1,4 +1,4 @@
-/* global atom jasmine beforeEach waitsForPromise waitsFor runs describe it expect */
+/* global atom beforeEach waitsForPromise waitsFor runs describe it expect */
 'use strict'
 
 var PlantumlPreviewEditor = require('../lib/plantuml-preview-editor')
@@ -12,7 +12,6 @@ describe('PlantumlPreview', function () {
   beforeEach(function () {
     workspaceElement = atom.views.getView(atom.workspace)
     activationPromise = atom.packages.activatePackage('plantuml-preview')
-    jasmine.attachToDOM(workspaceElement)
 
     waitsForPromise(function () {
       return atom.packages.activatePackage('language-plantuml')

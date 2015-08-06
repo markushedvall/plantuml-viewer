@@ -68,4 +68,15 @@ describe('PlantumlPreviewEditor', function () {
       })
     })
   })
+
+  describe('::getBuffer', function () {
+    it('should be same as plantuml editor buffer', function () {
+      waitsForOpeningEditor()
+      runs(function () {
+        var editor = atom.workspace.getActiveTextEditor()
+        var previewEditor = new PlantumlPreviewEditor('uri', editor.id)
+        expect(previewEditor.getBuffer()).toBe(editor.getBuffer())
+      })
+    })
+  })
 })
