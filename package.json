@@ -3,7 +3,11 @@
   "main": "./lib/plantuml-preview",
   "version": "0.0.0",
   "description": "A short description of your package",
-  "keywords": [],
+  "keywords": [
+    "plantuml",
+    "uml",
+    "preview"
+  ],
   "activationCommands": {
     "atom-workspace": "plantuml-preview:toggle"
   },
