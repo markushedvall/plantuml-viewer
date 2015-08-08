@@ -138,5 +138,28 @@ describe('PlantumlPreview', function () {
       })
     })
 
+    it('should show preview pane for text.plain files', function () {
+      waitsForPromise(function () {
+        return atom.packages.activatePackage('language-text')
+      })
+      waitsForOpening('text-plain.txt')
+      runsToggle()
+      waitsForActivation()
+      waitsForPreviewToBeCreated()
+      runs(function () {
+        expect(atom.workspace.getPanes()).toHaveLength(2)
+      })
+    })
+
+    it('should show preview pane for text.plain.null-grammar files', function () {
+      waitsForOpening('null-grammar')
+      runsToggle()
+      waitsForActivation()
+      waitsForPreviewToBeCreated()
+      runs(function () {
+        expect(atom.workspace.getPanes()).toHaveLength(2)
+      })
+    })
+
   })
 })

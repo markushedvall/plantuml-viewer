@@ -1,0 +1,9 @@
+{
+  "type": "array",
+  "default": [
+    "source.plantuml",
+    "plantuml",
+    "text.plain",
+    "text.plain.null-grammar"
+  ]
+}
