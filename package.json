@@ -2,7 +2,7 @@
   "name": "plantuml-preview",
   "main": "./lib/plantuml-preview",
   "version": "0.0.0",
-  "description": "A short description of your package",
+  "description": "Open a rendered diagram of the PlantUML source in an editor with `ctrl-alt-p`.",
   "keywords": [
     "plantuml",
     "uml",
