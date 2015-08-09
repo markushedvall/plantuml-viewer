@@ -1,24 +1,24 @@
 /* global atom beforeEach waitsForPromise waitsFor runs describe it expect */
 'use strict'
 
-var PlantumlPreviewEditor = require('../lib/plantuml-preview-editor')
+var PlantumlViewerEditor = require('../lib/plantuml-viewer-editor')
 
-var TOGGLE = 'plantuml-preview:toggle'
+var TOGGLE = 'plantuml-viewer:toggle'
 
-describe('PlantumlPreview', function () {
+describe('PlantumlViewer', function () {
   var activationPromise
   var workspaceElement
 
   beforeEach(function () {
     workspaceElement = atom.views.getView(atom.workspace)
-    activationPromise = atom.packages.activatePackage('plantuml-preview')
+    activationPromise = atom.packages.activatePackage('plantuml-viewer')
 
     waitsForPromise(function () {
       return atom.packages.activatePackage('language-plantuml')
     })
   })
 
-  function waitsForPreviewToBeCreated () {
+  function waitsForViewerToBeCreated () {
     waitsFor(function () {
       return atom.workspace.getPanes()[1].getActiveItem()
     })
@@ -42,7 +42,7 @@ describe('PlantumlPreview', function () {
     })
   }
 
-  describe('when the plantuml-preview:toggle event is triggered', function () {
+  describe('when the plantuml-viewer:toggle event is triggered', function () {
     it('should create a second pane', function () {
       waitsForOpening('file.puml')
 
@@ -52,7 +52,7 @@ describe('PlantumlPreview', function () {
 
       runsToggle()
       waitsForActivation()
-      waitsForPreviewToBeCreated()
+      waitsForViewerToBeCreated()
 
       runs(function () {
         expect(atom.workspace.getPanes()).toHaveLength(2)
@@ -71,7 +71,7 @@ describe('PlantumlPreview', function () {
 
       runsToggle()
       waitsForActivation()
-      waitsForPreviewToBeCreated()
+      waitsForViewerToBeCreated()
 
       runs(function () {
         expect(firstPane.getItems()).toHaveLength(1)
@@ -89,39 +89,39 @@ describe('PlantumlPreview', function () {
 
       runsToggle()
       waitsForActivation()
-      waitsForPreviewToBeCreated()
+      waitsForViewerToBeCreated()
 
       runs(function () {
         expect(firstPane.isActive()).toBe(true)
       })
     })
 
-    it('should create a pane with a PlantumlPreviewEditor', function () {
+    it('should create a pane with a PlantumlViewerEditor', function () {
       waitsForOpening('file.puml')
       runsToggle()
       waitsForActivation()
-      waitsForPreviewToBeCreated()
+      waitsForViewerToBeCreated()
       runs(function () {
-        var preview = atom.workspace.getPanes()[1].getActiveItem()
-        expect(preview).toBeInstanceOf(PlantumlPreviewEditor)
+        var viewer = atom.workspace.getPanes()[1].getActiveItem()
+        expect(viewer).toBeInstanceOf(PlantumlViewerEditor)
       })
     })
 
-    it('should destroy active PlantumlPreviewEditor', function () {
+    it('should destroy active PlantumlViewerEditor', function () {
       waitsForOpening('file.puml')
       runsToggle()
       waitsForActivation()
-      waitsForPreviewToBeCreated()
+      waitsForViewerToBeCreated()
       runs(function () {
-        var previewPane = atom.workspace.getPanes()[1]
-        expect(previewPane.isActive()).toBe(false)
+        var viewerPane = atom.workspace.getPanes()[1]
+        expect(viewerPane.isActive()).toBe(false)
 
-        previewPane.activate()
-        expect(previewPane.isActive()).toBe(true)
-        expect(previewPane.getItems()).toHaveLength(1)
+        viewerPane.activate()
+        expect(viewerPane.isActive()).toBe(true)
+        expect(viewerPane.getItems()).toHaveLength(1)
 
         atom.commands.dispatch(workspaceElement, TOGGLE)
-        expect(previewPane.getItems()).toHaveLength(0)
+        expect(viewerPane.getItems()).toHaveLength(0)
       })
     })
 
@@ -129,33 +129,33 @@ describe('PlantumlPreview', function () {
       waitsForOpening('file.puml')
       runsToggle()
       waitsForActivation()
-      waitsForPreviewToBeCreated()
+      waitsForViewerToBeCreated()
       runs(function () {
-        var previewPane = atom.workspace.getPanes()[1]
-        expect(previewPane.getItems()).toHaveLength(1)
+        var viewerPane = atom.workspace.getPanes()[1]
+        expect(viewerPane.getItems()).toHaveLength(1)
         atom.commands.dispatch(workspaceElement, TOGGLE)
-        expect(previewPane.getItems()).toHaveLength(0)
+        expect(viewerPane.getItems()).toHaveLength(0)
       })
     })
 
-    it('should show preview pane for text.plain files', function () {
+    it('should show viewer pane for text.plain files', function () {
       waitsForPromise(function () {
         return atom.packages.activatePackage('language-text')
       })
       waitsForOpening('text-plain.txt')
       runsToggle()
       waitsForActivation()
-      waitsForPreviewToBeCreated()
+      waitsForViewerToBeCreated()
       runs(function () {
         expect(atom.workspace.getPanes()).toHaveLength(2)
       })
     })
 
-    it('should show preview pane for text.plain.null-grammar files', function () {
+    it('should show viewer pane for text.plain.null-grammar files', function () {
       waitsForOpening('null-grammar')
       runsToggle()
       waitsForActivation()
-      waitsForPreviewToBeCreated()
+      waitsForViewerToBeCreated()
       runs(function () {
         expect(atom.workspace.getPanes()).toHaveLength(2)
       })

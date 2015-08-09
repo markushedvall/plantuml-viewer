@@ -1,15 +1,15 @@
 /* global jasmine atom beforeEach waitsForPromise waitsFor runs describe it expect */
 'use strict'
 
-var PlantumlPreviewEditor = require('../lib/plantuml-preview-editor')
-var PlantumlPreviewView = require('../lib/plantuml-preview-view')
+var PlantumlViewerEditor = require('../lib/plantuml-viewer-editor')
+var PlantumlViewerView = require('../lib/plantuml-viewer-view')
 var plantuml = require('node-plantuml')
 var temp = require('temp')
 var fs = require('fs')
 
 temp.track()
 
-describe('PlantumlPreviewView', function () {
+describe('PlantumlViewerView', function () {
   var editor
   var view
 
@@ -25,8 +25,8 @@ describe('PlantumlPreviewView', function () {
       editor.onDidStopChanging(done)
     })
     runs(function () {
-      var previewEditor = new PlantumlPreviewEditor('uri', editor.id)
-      view = new PlantumlPreviewView(previewEditor)
+      var viewerEditor = new PlantumlViewerEditor('uri', editor.id)
+      view = new PlantumlViewerView(viewerEditor)
       jasmine.attachToDOM(view.element)
     })
     waitsFor(function () {
@@ -44,32 +44,32 @@ describe('PlantumlPreviewView', function () {
     })
 
     runs(function () {
-      var previewFilePath = view.image.attr('src')
-      var previewImage = fs.readFileSync(previewFilePath)
+      var viewerFilePath = view.image.attr('src')
+      var viewerImage = fs.readFileSync(viewerFilePath)
       var expectedImage = fs.readFileSync(tempStream.path)
 
-      var diff = Buffer.compare(previewImage, expectedImage)
+      var diff = Buffer.compare(viewerImage, expectedImage)
       expect(diff).toBe(0)
     })
   })
 
   describe('when the editor text is modified', function () {
     it('should display an updated image', function () {
-      var previousPreviewPath
+      var previousViewerPath
       runs(function () {
-        previousPreviewPath = view.image.attr('src')
+        previousViewerPath = view.image.attr('src')
         editor.getBuffer().setText('A -> C')
       })
       waitsFor(function () {
-        return (view.image.attr('src') !== previousPreviewPath)
+        return (view.image.attr('src') !== previousViewerPath)
       })
 
       runs(function () {
-        var previewFilePath = view.image.attr('src')
-        var previousImage = fs.readFileSync(previousPreviewPath)
-        var previewImage = fs.readFileSync(previewFilePath)
+        var viewerFilePath = view.image.attr('src')
+        var previousImage = fs.readFileSync(previousViewerPath)
+        var viewerImage = fs.readFileSync(viewerFilePath)
 
-        var previousDiff = Buffer.compare(previousImage, previewImage)
+        var previousDiff = Buffer.compare(previousImage, viewerImage)
         expect(previousDiff).not.toBe(0)
       })
     })

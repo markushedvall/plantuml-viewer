@@ -1,17 +1,18 @@
 {
-  "name": "plantuml-preview",
-  "main": "./lib/plantuml-preview",
-  "version": "0.1.0",
+  "name": "plantuml-viewer",
+  "main": "./lib/plantuml-viewer",
+  "version": "0.0.0",
   "description": "Open a rendered diagram of the PlantUML source in an editor with `ctrl-alt-p`.",
   "keywords": [
     "plantuml",
     "uml",
+    "viewer",
     "preview"
   ],
   "activationCommands": {
-    "atom-workspace": "plantuml-preview:toggle"
+    "atom-workspace": "plantuml-viewer:toggle"
   },
-  "repository": "https://github.com/atom/plantuml-preview",
+  "repository": "https://github.com/markushedvall/plantuml-viewer",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"

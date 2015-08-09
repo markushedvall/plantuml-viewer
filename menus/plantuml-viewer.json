@@ -2,8 +2,8 @@
   "context-menu": {
     "atom-text-editor": [
       {
-        "label": "Toggle plantuml-preview",
-        "command": "plantuml-preview:toggle"
+        "label": "Toggle plantuml-viewer",
+        "command": "plantuml-viewer:toggle"
       }
     ]
   },
@@ -12,11 +12,11 @@
       "label": "Packages",
       "submenu": [
         {
-          "label": "plantuml-preview",
+          "label": "plantuml-viewer",
           "submenu": [
             {
               "label": "Toggle",
-              "command": "plantuml-preview:toggle"
+              "command": "plantuml-viewer:toggle"
             }
           ]
         }

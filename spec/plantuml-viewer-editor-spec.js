@@ -1,10 +1,10 @@
 /* global atom waitsForPromise runs describe it expect */
 'use strict'
 
-var PlantumlPreviewEditor = require('../lib/plantuml-preview-editor')
-var PlantumlPreviewView = require('../lib/plantuml-preview-view')
+var PlantumlViewerEditor = require('../lib/plantuml-viewer-editor')
+var PlantumlViewerView = require('../lib/plantuml-viewer-view')
 
-describe('PlantumlPreviewEditor', function () {
+describe('PlantumlViewerEditor', function () {
   function waitsForOpeningEditor () {
     waitsForPromise(function () {
       return atom.workspace.open('file.puml')
@@ -12,13 +12,13 @@ describe('PlantumlPreviewEditor', function () {
   }
 
   describe('::getViewClass', function () {
-    it('should be a constructor for PlantumlPreviewView', function () {
+    it('should be a constructor for PlantumlViewerView', function () {
       waitsForOpeningEditor()
       runs(function () {
         var editor = atom.workspace.getActiveTextEditor()
-        var previewEditor = new PlantumlPreviewEditor('uri', editor.id)
-        var ViewCLass = previewEditor.getViewClass()
-        expect(ViewCLass).toBe(PlantumlPreviewView)
+        var viewerEditor = new PlantumlViewerEditor('uri', editor.id)
+        var ViewCLass = viewerEditor.getViewClass()
+        expect(ViewCLass).toBe(PlantumlViewerView)
       })
     })
   })
@@ -30,8 +30,8 @@ describe('PlantumlPreviewEditor', function () {
         var editor = atom.workspace.getActiveTextEditor()
 
         var uri = 'uri'
-        var previewEditor = new PlantumlPreviewEditor(uri, editor.id)
-        expect(previewEditor.getURI()).toBe(uri)
+        var viewerEditor = new PlantumlViewerEditor(uri, editor.id)
+        expect(viewerEditor.getURI()).toBe(uri)
       })
     })
   })
@@ -41,8 +41,8 @@ describe('PlantumlPreviewEditor', function () {
       waitsForOpeningEditor()
       runs(function () {
         var editor = atom.workspace.getActiveTextEditor()
-        var previewEditor = new PlantumlPreviewEditor('uri', editor.id)
-        expect(previewEditor.getTitle()).toBe(editor.getTitle() + ' Preview')
+        var viewerEditor = new PlantumlViewerEditor('uri', editor.id)
+        expect(viewerEditor.getTitle()).toBe(editor.getTitle() + ' Preview')
       })
     })
   })
@@ -52,8 +52,8 @@ describe('PlantumlPreviewEditor', function () {
       waitsForOpeningEditor()
       runs(function () {
         var editor = atom.workspace.getActiveTextEditor()
-        var previewEditor = new PlantumlPreviewEditor('uri', editor.id)
-        expect(previewEditor.getPath()).toBe(editor.getPath())
+        var viewerEditor = new PlantumlViewerEditor('uri', editor.id)
+        expect(viewerEditor.getPath()).toBe(editor.getPath())
       })
     })
   })
@@ -63,8 +63,8 @@ describe('PlantumlPreviewEditor', function () {
       waitsForOpeningEditor()
       runs(function () {
         var editor = atom.workspace.getActiveTextEditor()
-        var previewEditor = new PlantumlPreviewEditor('uri', editor.id)
-        expect(previewEditor.getText()).toBe(editor.getText())
+        var viewerEditor = new PlantumlViewerEditor('uri', editor.id)
+        expect(viewerEditor.getText()).toBe(editor.getText())
       })
     })
   })
@@ -74,8 +74,8 @@ describe('PlantumlPreviewEditor', function () {
       waitsForOpeningEditor()
       runs(function () {
         var editor = atom.workspace.getActiveTextEditor()
-        var previewEditor = new PlantumlPreviewEditor('uri', editor.id)
-        expect(previewEditor.getBuffer()).toBe(editor.getBuffer())
+        var viewerEditor = new PlantumlViewerEditor('uri', editor.id)
+        expect(viewerEditor.getBuffer()).toBe(editor.getBuffer())
       })
     })
   })
