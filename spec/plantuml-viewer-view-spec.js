@@ -10,6 +10,7 @@ describe('PlantumlViewerView', function () {
 
   beforeEach(function () {
     jasmine.useRealClock()
+    atom.config.set('plantuml-viewer.liveUpdate', true)
     waitsForPromise(function () {
       return atom.workspace.open('file.puml')
     })
