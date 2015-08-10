@@ -1,0 +1,19 @@
+{
+  "liveUpdate": {
+    "type": "boolean",
+    "default": true
+  },
+  "openInSplitPane": {
+    "type": "boolean",
+    "default": true
+  },
+  "grammars": {
+    "type": "array",
+    "default": [
+      "plantuml",
+      "source.plantuml",
+      "text.plain",
+      "text.plain.null-grammar"
+    ]
+  }
+}
