@@ -37,12 +37,12 @@ describe('PlantumlViewerEditor', function () {
   })
 
   describe('::getTitle', function () {
-    it('should be plantuml editor title + " Preview"', function () {
+    it('should be plantuml editor title + " View"', function () {
       waitsForOpeningEditor()
       runs(function () {
         var editor = atom.workspace.getActiveTextEditor()
         var viewerEditor = new PlantumlViewerEditor('uri', editor.id)
-        expect(viewerEditor.getTitle()).toBe(editor.getTitle() + ' Preview')
+        expect(viewerEditor.getTitle()).toBe(editor.getTitle() + ' View')
       })
     })
   })
