@@ -1,5 +1,8 @@
 {
   "context-menu": {
+    ".plantuml-viewer": [
+      { "label": "Save As\u2026", "command": "core:save-as" }
+    ],
     "atom-text-editor": [
       {
         "label": "Toggle plantuml-viewer",
