@@ -1,3 +1,22 @@
-## 0.1.0 - First Release
-* Every feature added
-* Every bug fixed
+## 0.2.1
+* Updated minimum version of node-plantuml dependency
+
+## 0.2.0
+* Added functionality to save diagrams as PNG, SVG or EPS
+* Added configuration for Graphviz dot executable
+
+## 0.1.6
+* UML diagrams are set to always fill the whole pane
+* Added padding to the diagram
+
+## 0.1.3
+* Added configuration for live updates
+* Added configuration for split pane
+
+## 0.1.2
+* Sped up updates by using SVG instead of PNG
+* Sped up updates by updating on every change
+
+## 0.1.1
+* Displays PlantUML diagram in a new pane when toggling
+* Updates the diagram live as the source is updated
