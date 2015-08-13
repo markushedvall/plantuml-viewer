@@ -1,3 +1,6 @@
+## 0.3.0
+* Added pan and zoom controls for the PlantUML diagrams
+
 ## 0.2.1
 * Updated minimum version of node-plantuml dependency
 
