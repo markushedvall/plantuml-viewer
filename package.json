@@ -19,7 +19,8 @@
   },
   "dependencies": {
     "atom-space-pen-views": "^2.0.5",
-    "node-plantuml": "^0.2.0"
+    "node-plantuml": "^0.2.0",
+    "svg-pan-zoom": "^3.2.3"
   },
   "devDependencies": {
     "standard": "^4.5.4"
