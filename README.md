@@ -23,6 +23,7 @@ Install [Graphviz](http://www.graphviz.org/) to be able to generate all diagram 
 
 # Settings
 
+* `Config File`: The config file that is read before each diagram is generated.
 * `Grammars`: The grammar types that can be toggled to show a PlantUML view.
 * `Graphviz Dot Executable`: The path to the Graphviz dot executable.
 * `Live Update`: If checked the PlantUML views will be updated while typing. (default=true)

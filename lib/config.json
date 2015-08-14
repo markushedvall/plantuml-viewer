@@ -7,6 +7,10 @@
     "type": "boolean",
     "default": true
   },
+  "configFile": {
+    "type": "string",
+    "default": ""
+  },
   "graphvizDotExecutable": {
     "type": "string",
     "default": ""
