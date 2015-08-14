@@ -1,3 +1,8 @@
+## 0.4.0
+* Added configuration for PlantUML config file, read before each diagram
+* Improved viewport handling while doing live update and while resizing panels
+* Various bug fixes
+
 ## 0.3.0
 * Added pan and zoom controls for the PlantUML diagrams
 
