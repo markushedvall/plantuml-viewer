@@ -1,7 +1,12 @@
+## 0.4.1
+* Fixed so that hovering over diagram text don't cause the mouse cursor to change
+* Fixed a bug where updating a view when it was not visible would cause errors
+
 ## 0.4.0
 * Added configuration for PlantUML config file, read before each diagram
 * Improved viewport handling while doing live update and while resizing panels
-* Various bug fixes
+* Fixed a bug where svg-pan-zoom was still considered constructed after destruction
+* Fixed a bug where resizing view when it was not visible would cause errors
 
 ## 0.3.0
 * Added pan and zoom controls for the PlantUML diagrams
