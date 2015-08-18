@@ -23,5 +23,9 @@
       "text.plain",
       "text.plain.null-grammar"
     ]
+  },
+  "charset":{
+    "type":"string",
+    "default":""
   }
 }
