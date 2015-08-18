@@ -24,6 +24,7 @@ Install [Graphviz](http://www.graphviz.org/) to be able to generate all diagram 
 
 # Settings
 
+* `Charset`: The charset used when generating diagrams.
 * `Config File`: The config file that is read before each diagram is generated.
 * `Grammars`: The grammar types that can be toggled to show a PlantUML view.
 * `Graphviz Dot Executable`: The path to the Graphviz dot executable.
