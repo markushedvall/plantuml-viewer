@@ -1,3 +1,6 @@
+## 0.5.0
+* Add support for including multiple source files via relative include paths
+
 ## 0.4.1
 * Fixed so that hovering over diagram text don't cause the mouse cursor to change
 * Fixed a bug where updating a view when it was not visible would cause errors
