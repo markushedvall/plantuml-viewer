@@ -18,8 +18,9 @@ Install [Graphviz](http://www.graphviz.org/) to be able to generate all diagram 
 # Features
 
 * Very fast live updates utilizing the power of PlantUML's SVG output and Atoms HTML views.
-* Fluent controls for panning and zooming PlantUML diagrams, including touch support
-* Save UML diagrams as PNG, SVG and EPS.
+* Fluent controls for panning and zooming PlantUML diagrams, including touch support.
+* Save UML diagrams as PNG, SVG or EPS.
+* Supports relative include paths in source files.
 
 # Settings
 
