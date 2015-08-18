@@ -42,6 +42,7 @@ describe('PlantumlViewerEditor', function () {
       runs(function () {
         var editor = atom.workspace.getActiveTextEditor()
         var viewerEditor = new PlantumlViewerEditor('uri', editor.id)
+        viewerEditor.getViewClass()
         expect(viewerEditor.getTitle()).toBe(editor.getTitle() + ' View')
       })
     })
@@ -53,6 +54,7 @@ describe('PlantumlViewerEditor', function () {
       runs(function () {
         var editor = atom.workspace.getActiveTextEditor()
         var viewerEditor = new PlantumlViewerEditor('uri', editor.id)
+        viewerEditor.getViewClass()
         expect(viewerEditor.getPath()).toBe(editor.getPath())
       })
     })
@@ -64,6 +66,7 @@ describe('PlantumlViewerEditor', function () {
       runs(function () {
         var editor = atom.workspace.getActiveTextEditor()
         var viewerEditor = new PlantumlViewerEditor('uri', editor.id)
+        viewerEditor.getViewClass()
         expect(viewerEditor.getText()).toBe(editor.getText())
       })
     })
@@ -75,6 +78,7 @@ describe('PlantumlViewerEditor', function () {
       runs(function () {
         var editor = atom.workspace.getActiveTextEditor()
         var viewerEditor = new PlantumlViewerEditor('uri', editor.id)
+        viewerEditor.getViewClass()
         expect(viewerEditor.getBuffer()).toBe(editor.getBuffer())
       })
     })

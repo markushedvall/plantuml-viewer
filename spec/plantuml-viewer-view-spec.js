@@ -22,6 +22,7 @@ describe('PlantumlViewerView', function () {
     })
     runs(function () {
       var viewerEditor = new PlantumlViewerEditor('uri', editor.id)
+      viewerEditor.getViewClass()
       view = new PlantumlViewerView(viewerEditor)
       jasmine.attachToDOM(view.element)
     })
