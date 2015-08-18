@@ -1,5 +1,11 @@
+## 0.6.0
+* Added serialization and deserialization of PlantUML views
+* Added configuration for charset
+* Made it possible to split PlantUML views
+* Fixed include paths to work in Windows
+
 ## 0.5.0
-* Add support for including multiple source files via relative include paths
+* Added support for including multiple source files via relative include paths
 
 ## 0.4.1
 * Fixed so that hovering over diagram text don't cause the mouse cursor to change
