@@ -2,7 +2,7 @@ language: objective-c
 
 env: APM_TEST_PACKAGES="language-plantuml"
 
-script: 'curl -s https://raw.githubusercontent.com/markushedvall/ci/master/build-package.sh | sh'
+script: 'curl -s https://raw.githubusercontent.com/atom/ci/master/build-package.sh | sh'
 
 git:
   depth: 10
