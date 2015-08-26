@@ -1,3 +1,6 @@
+## 0.6.1
+* Fix a problem with the PlantUML view title not being displayed properly
+
 ## 0.6.0
 * Added serialization and deserialization of PlantUML views
 * Added configuration for charset
