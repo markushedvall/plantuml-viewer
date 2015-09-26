@@ -1,7 +1,8 @@
 {
   "context-menu": {
     ".plantuml-viewer": [
-      { "label": "Save As\u2026", "command": "core:save-as" }
+      { "label": "Save As\u2026", "command": "core:save-as" },
+      { "label": "Copy", "command": "core:copy" }
     ],
     "atom-text-editor": [
       {
