@@ -1,5 +1,10 @@
+## 0.7.0
+* Added functionality for copying diagrams as PNG images
+* Upgraded node-plantuml for bug fixes
+* Fixed deserialization issues
+
 ## 0.6.1
-* Fix a problem with the PlantUML view title not being displayed properly
+* Fixed a problem with the PlantUML view title not being displayed properly
 
 ## 0.6.0
 * Added serialization and deserialization of PlantUML views
