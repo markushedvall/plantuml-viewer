@@ -16,10 +16,10 @@
       "label": "Packages",
       "submenu": [
         {
-          "label": "plantuml-viewer",
+          "label": "PlantUML Viewer",
           "submenu": [
             {
-              "label": "Toggle",
+              "label": "Toggle View",
               "command": "plantuml-viewer:toggle"
             }
           ]
