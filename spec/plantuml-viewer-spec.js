@@ -19,8 +19,10 @@ describe('PlantumlViewer', function () {
   })
 
   function waitsForViewerToBeCreated () {
+    // Wait for the view to be created and the pane to be switched back
     waitsFor(function () {
-      return atom.workspace.getPanes()[1].getActiveItem()
+      return atom.workspace.getPanes()[1].getActiveItem() &&
+             atom.workspace.getPanes()[0].isActive()
     })
   }
 
