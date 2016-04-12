@@ -3,6 +3,10 @@
     "type": "boolean",
     "default": true
   },
+  "useNailgun": {
+    "type": "boolean",
+    "default": false
+  },
   "openInSplitPane": {
     "type": "boolean",
     "default": true
