@@ -18,11 +18,15 @@ describe('PlantumlViewer', function () {
     })
   })
 
+  function getPanes () {
+    return atom.workspace.getCenter().getPanes()
+  }
+
   function waitsForViewerToBeCreated () {
     // Wait for the view to be created and the pane to be switched back
     waitsFor(function () {
-      return atom.workspace.getPanes()[1].getActiveItem() &&
-             atom.workspace.getPanes()[0].isActive()
+      return getPanes()[1].getActiveItem() &&
+             getPanes()[0].isActive()
     })
   }
 
@@ -49,7 +53,7 @@ describe('PlantumlViewer', function () {
       waitsForOpening('file.puml')
 
       runs(function () {
-        expect(atom.workspace.getPanes()).toHaveLength(1)
+        expect(getPanes()).toHaveLength(1)
       })
 
       runsToggle()
@@ -57,12 +61,12 @@ describe('PlantumlViewer', function () {
       waitsForViewerToBeCreated()
 
       runs(function () {
-        expect(atom.workspace.getPanes()).toHaveLength(2)
+        expect(getPanes()).toHaveLength(2)
       })
     })
 
     it('should not add a new editor to first pane', function () {
-      var firstPane = atom.workspace.getPanes()[0]
+      var firstPane = getPanes()[0]
       expect(firstPane.getItems()).toHaveLength(0)
 
       waitsForOpening('file.puml')
@@ -81,7 +85,7 @@ describe('PlantumlViewer', function () {
     })
 
     it('should keep first pane active', function () {
-      var firstPane = atom.workspace.getPanes()[0]
+      var firstPane = getPanes()[0]
 
       waitsForOpening('file.puml')
 
@@ -104,7 +108,7 @@ describe('PlantumlViewer', function () {
       waitsForActivation()
       waitsForViewerToBeCreated()
       runs(function () {
-        var viewer = atom.workspace.getPanes()[1].getActiveItem()
+        var viewer = getPanes()[1].getActiveItem()
         expect(viewer).toBeInstanceOf(PlantumlViewerEditor)
       })
     })
@@ -115,7 +119,7 @@ describe('PlantumlViewer', function () {
       waitsForActivation()
       waitsForViewerToBeCreated()
       runs(function () {
-        var viewerPane = atom.workspace.getPanes()[1]
+        var viewerPane = getPanes()[1]
         expect(viewerPane.isActive()).toBe(false)
 
         viewerPane.activate()
@@ -133,7 +137,7 @@ describe('PlantumlViewer', function () {
       waitsForActivation()
       waitsForViewerToBeCreated()
       runs(function () {
-        var viewerPane = atom.workspace.getPanes()[1]
+        var viewerPane = getPanes()[1]
         expect(viewerPane.getItems()).toHaveLength(1)
         atom.commands.dispatch(workspaceElement, TOGGLE)
         expect(viewerPane.getItems()).toHaveLength(0)
@@ -149,7 +153,7 @@ describe('PlantumlViewer', function () {
       waitsForActivation()
       waitsForViewerToBeCreated()
       runs(function () {
-        expect(atom.workspace.getPanes()).toHaveLength(2)
+        expect(getPanes()).toHaveLength(2)
       })
     })
 
@@ -159,7 +163,7 @@ describe('PlantumlViewer', function () {
       waitsForActivation()
       waitsForViewerToBeCreated()
       runs(function () {
-        expect(atom.workspace.getPanes()).toHaveLength(2)
+        expect(getPanes()).toHaveLength(2)
       })
     })
 
