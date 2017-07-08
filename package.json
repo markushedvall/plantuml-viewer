@@ -9,6 +9,9 @@
     "viewer",
     "preview"
   ],
+  "activationCommands": {
+    "atom-workspace": "plantuml-viewer:toggle"
+  },
   "repository": "https://github.com/markushedvall/plantuml-viewer",
   "license": "MIT",
   "engines": {
