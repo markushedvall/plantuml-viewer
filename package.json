@@ -20,7 +20,7 @@
     "svg-pan-zoom": "^3.2.3"
   },
   "devDependencies": {
-    "standard": "^4.5.4"
+    "standard": "^10.0.2"
   },
   "scripts": {
     "test": "standard && apm test",

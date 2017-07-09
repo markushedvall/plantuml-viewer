@@ -166,6 +166,5 @@ describe('PlantumlViewer', function () {
         expect(getPanes()).toHaveLength(2)
       })
     })
-
   })
 })
