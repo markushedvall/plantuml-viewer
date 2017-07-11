@@ -1,3 +1,7 @@
+## 0.7.1
+* Fixed menu labels to display the correct text
+* Replaced usage of some deprecated APIs
+
 ## 0.7.0
 * Added functionality for copying diagrams as PNG images
 * Upgraded node-plantuml for bug fixes
