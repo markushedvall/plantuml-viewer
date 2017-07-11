@@ -1,3 +1,7 @@
+## 0.7.2
+* Throttle the update of images for a less jumpy experience
+* The dot executable can now be detected from the PATH variable
+
 ## 0.7.1
 * Fixed menu labels to display the correct text
 * Replaced usage of some deprecated APIs
