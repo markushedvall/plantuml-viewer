@@ -1,7 +1,6 @@
 /* global jasmine atom beforeEach waitsForPromise waitsFor runs describe it expect */
 'use strict'
 
-var PlantumlViewerEditor = require('../lib/plantuml-viewer-editor')
 var PlantumlViewerView = require('../lib/plantuml-viewer-view')
 
 describe('PlantumlViewerView', function () {
@@ -21,9 +20,7 @@ describe('PlantumlViewerView', function () {
       editor.onDidStopChanging(done)
     })
     runs(function () {
-      var viewerEditor = new PlantumlViewerEditor('uri', editor.id)
-      viewerEditor.getViewClass()
-      view = new PlantumlViewerView(viewerEditor)
+      view = new PlantumlViewerView(editor.id)
       jasmine.attachToDOM(view.element)
     })
     waitsFor(function () {

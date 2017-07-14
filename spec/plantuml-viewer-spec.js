@@ -1,7 +1,7 @@
 /* global atom beforeEach waitsForPromise waitsFor runs describe it expect */
 'use strict'
 
-var PlantumlViewerEditor = require('../lib/plantuml-viewer-editor')
+var PlantumlViewerView = require('../lib/plantuml-viewer-view')
 
 var TOGGLE = 'plantuml-viewer:toggle'
 
@@ -102,18 +102,18 @@ describe('PlantumlViewer', function () {
       })
     })
 
-    it('should create a pane with a PlantumlViewerEditor', function () {
+    it('should create a pane with a PlantumlViewerView', function () {
       waitsForOpening('file.puml')
       runsToggle()
       waitsForActivation()
       waitsForViewerToBeCreated()
       runs(function () {
         var viewer = getPanes()[1].getActiveItem()
-        expect(viewer).toBeInstanceOf(PlantumlViewerEditor)
+        expect(viewer).toBeInstanceOf(PlantumlViewerView)
       })
     })
 
-    it('should destroy active PlantumlViewerEditor', function () {
+    it('should destroy active PlantumlViewerView', function () {
       waitsForOpening('file.puml')
       runsToggle()
       waitsForActivation()
