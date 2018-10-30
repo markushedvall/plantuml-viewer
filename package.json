@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "atom-space-pen-views": "^2.2.0",
-    "node-plantuml": "^0.5.0",
+    "node-plantuml": "^0.6.1",
     "svg-pan-zoom": "^3.5.1"
   },
   "devDependencies": {
@@ -25,5 +25,10 @@
   "scripts": {
     "test": "standard && apm test",
     "lint": "standard"
+  },
+  "apmInstallSource": {
+    "type": "git",
+    "source": "tomsotte/plantuml-viewer",
+    "sha": "4c700401c1f21d1892937f7e1eb89eb14c7b9a60"
   }
 }
